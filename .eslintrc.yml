@@ -1,0 +1,41 @@
+env:
+  node: true
+  es6: true
+  jest/globals: true
+
+parser: '@typescript-eslint/parser'
+
+parserOptions:
+  ecmaVersion: 9
+  ecmaFeatures:
+    jsx: true
+
+extends:
+  - standard
+  - prettier
+  - prettier/standard
+  - plugin:jest/recommended
+  - plugin:@typescript-eslint/recommended
+  - prettier/@typescript-eslint
+
+plugins:
+  - jest
+  - prettier
+  - '@typescript-eslint'
+
+rules:
+  prettier/prettier: error
+  standard/no-callback-literal: off
+  jest/no-disabled-tests: off
+  '@typescript-eslint/no-unused-vars':
+    - warn
+    - args: none
+      varsIgnorePattern: '^_'
+      argsIgnorePattern: '^_'
+  prefer-const:
+    - error
+    - destructuring: any
+      ignoreReadBeforeAssign: false
+  '@typescript-eslint/explicit-function-return-type': off
+  '@typescript-eslint/no-var-requires': off
+  '@typescript-eslint/interface-name-prefix': off
